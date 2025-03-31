@@ -1,0 +1,33 @@
+name: Trading Futures App
+description: Aplicación de análisis y recomendaciones para trading en futuros y criptomonedas
+
+sdk: streamlit
+sdk_version: 1.44.0
+python_version: 3.10
+
+# Configuración de dependencias
+requirements:
+  - pandas==2.2.3
+  - numpy==2.2.4
+  - matplotlib==3.8.3
+  - plotly==6.0.1
+  - requests==2.32.3
+
+# Configuración de la aplicación
+app:
+  streamlit:
+    entrypoint: web_app.py
+    parameters:
+      server:
+        port: 8501
+        address: 0.0.0.0
+        enableCORS: false
+        enableXsrfProtection: false
+      browser:
+        gatherUsageStats: false
+      theme:
+        primaryColor: "#1E88E5"
+        backgroundColor: "#FAFAFA"
+        secondaryBackgroundColor: "#F0F2F6"
+        textColor: "#424242"
+        font: "sans serif"
