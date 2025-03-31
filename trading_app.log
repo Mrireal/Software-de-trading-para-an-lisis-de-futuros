@@ -1,0 +1,14 @@
+2025-03-30 22:03:38,895 - app_launcher - INFO - Iniciando Software de Trading en Futuros
+2025-03-30 22:03:55,443 - app_launcher - INFO - Imagen de ejemplo creada en images/example_chart.png
+2025-03-30 22:03:55,445 - app_launcher - INFO - Iniciando aplicación Streamlit...
+2025-03-30 22:03:55,526 - app_launcher - INFO - Aplicación Streamlit iniciada correctamente
+2025-03-30 22:03:55,558 - app_launcher - INFO - Accede a la aplicación en http://localhost:8501
+2025-03-30 22:06:40,848 - app_launcher - INFO - Software de Trading en Futuros finalizado
+2025-03-30 22:08:45,234 - app_launcher - INFO - Iniciando Software de Trading en Futuros
+2025-03-30 22:08:49,611 - app_launcher - INFO - Iniciando aplicación Streamlit...
+2025-03-30 22:08:49,678 - app_launcher - INFO - Aplicación Streamlit iniciada correctamente
+2025-03-30 22:08:49,678 - app_launcher - INFO - Accede a la aplicación en http://localhost:8501
+2025-03-30 22:10:29,386 - app_launcher - INFO - Iniciando Software de Trading en Futuros
+2025-03-30 22:10:30,680 - app_launcher - INFO - Iniciando aplicación Streamlit...
+2025-03-30 22:10:30,683 - app_launcher - INFO - Aplicación Streamlit iniciada correctamente
+2025-03-30 22:10:30,684 - app_launcher - INFO - Accede a la aplicación en http://localhost:8501
