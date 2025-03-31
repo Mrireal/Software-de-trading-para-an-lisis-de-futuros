@@ -424,17 +424,6 @@ def create_candlestick_chart(df, indicators=None):
                     name='Bollinger Inferior',
                     line=dict(width=1, color='rgba(173, 216, 230, 0.7)')
                 ))
-                
-                # Rellenar área entre bandas
-                fig.add_trace(go.Scatter(
-                    x=df['timestamp'].tolist() + df['timestamp'].tolist()[::-1],
-                    y=df['bb_upper'].tolist() + df['bb_lower'].tolist()[::-1],
-                    fill='toself',
-                    fillcolor='rgba(173, 216, 230, 0.2)',
-                    line=dict(color='rgba(255, 255, 255, 0)'),
-                    hoverinfo='skip',
-                    showlegend=False
-                ))
     
     # Añadir señales de compra/venta
     buy_signals = df[df['signal'] == 1]
@@ -483,14 +472,6 @@ def create_candlestick_chart(df, indicators=None):
             xanchor="right",
             x=1
         )
-    )
-    
-    # Configurar ejes
-    fig.update_xaxes(
-        rangeslider_visible=False,
-        rangebreaks=[
-            dict(bounds=["sat", "mon"]),  # Ocultar fines de semana
-        ]
     )
     
     return fig
@@ -887,7 +868,7 @@ def calculate_backtest_metrics(df):
 def plot_backtest_results(df, strategy_name):
     """Genera gráficos para visualizar los resultados del backtest"""
     if df is None or df.empty:
-        return None
+        return None, None
     
     # Crear figura
     fig = go.Figure()
@@ -908,38 +889,6 @@ def plot_backtest_results(df, strategy_name):
         name='Buy & Hold',
         line=dict(color='gray', width=2, dash='dash')
     ))
-    
-    # Añadir señales de compra/venta
-    buy_signals = df[df['signal'] == 1]
-    sell_signals = df[df['signal'] == -1]
-    
-    if not buy_signals.empty:
-        fig.add_trace(go.Scatter(
-            x=buy_signals['timestamp'],
-            y=buy_signals['cumulative_strategy_returns'] * 100,
-            mode='markers',
-            name='Compra',
-            marker=dict(
-                symbol='triangle-up',
-                size=10,
-                color='green',
-                line=dict(width=1, color='darkgreen')
-            )
-        ))
-    
-    if not sell_signals.empty:
-        fig.add_trace(go.Scatter(
-            x=sell_signals['timestamp'],
-            y=sell_signals['cumulative_strategy_returns'] * 100,
-            mode='markers',
-            name='Venta',
-            marker=dict(
-                symbol='triangle-down',
-                size=10,
-                color='red',
-                line=dict(width=1, color='darkred')
-            )
-        ))
     
     # Configurar diseño
     fig.update_layout(
@@ -1221,9 +1170,6 @@ def main():
         - **Acciones**: Apple, Microsoft, Google y otras empresas líderes
         - **Futuros**: S&P 500, Nasdaq, Oro, Petróleo y más
         """)
-        
-        # Mostrar imagen de ejemplo
-        st.image("https://miro.medium.com/max/1400/1*qGQoRjjq-aY0qhNgYpBQKA.png", caption="Ejemplo de análisis técnico")
 
 if __name__ == "__main__":
     main()
